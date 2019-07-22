@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <item
+        android:id="@+id/navigation_affairs"
+        android:icon="@drawable/currentaffair"
+        android:title="AFFAIRS" />
+
+
+    <item
+        android:id="@+id/navigation_notes"
+        android:icon="@drawable/notes"
+        android:title="NOTES" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home"
+        android:title="HOME" />
+
+    <item
+        android:id="@+id/navigation_tests"
+        android:icon="@drawable/tests"
+        android:title="TESTS" />
+
+
+
+    <item
+        android:id="@+id/navigation_contact"
+        android:icon="@drawable/contact"
+        android:title="CONTACT" />
+
+</menu>

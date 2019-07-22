@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "255073560360",
+    "firebase_url": "https://agriculturefacts-24c95.firebaseio.com",
+    "project_id": "agriculturefacts-24c95",
+    "storage_bucket": "agriculturefacts-24c95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255073560360:android:0f629fd4542bbd99",
+        "android_client_info": {
+          "package_name": "com.bufferchime.agriculturefact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255073560360-pi2vii885uclpb9uqmncvg5i3i69usov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqW_VHRr5JcAMtbos5Oj9knNAfMte6RuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255073560360-pi2vii885uclpb9uqmncvg5i3i69usov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
