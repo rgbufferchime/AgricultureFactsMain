@@ -97,7 +97,7 @@ public class Currentaffairs extends AppCompatActivity implements BottomNavigatio
                 if (itemId == R.id.navigation_home) {
                     Currentaffairs.this.startActivity(new Intent(Currentaffairs.this, Home.class));
                 } else if (itemId == R.id.navigation_affairs) {
-                    Currentaffairs.this.startActivity(new Intent(Currentaffairs.this, Currentaffairs.class));
+                    Currentaffairs.this.startActivity(new Intent(Currentaffairs.this, OlderPosts.class));
                 } else if (itemId == R.id.navigation_notes) {
                     Currentaffairs.this.startActivity(new Intent(Currentaffairs.this, Notes.class));
                 } else if (itemId == R.id.navigation_tests) {

@@ -163,7 +163,7 @@
                         android:layout_weight="1"
                         android:gravity="center">
 
-                        <com.bufferchime.agriculturefact.game.quiz.helper.CircularProgressIndicator
+                        <com.bufferchime.agriculturefact.helper.CircularProgressIndicator
                             android:id="@+id/progressBarTwo"
                             android:layout_width="@dimen/progress_h_w"
                             android:layout_height="@dimen/progress_h_w"
@@ -309,7 +309,7 @@
                                                 </RelativeLayout>
                                             </ScrollView>
 
-                                            <com.bufferchime.agriculturefact.game.quiz.helper.TouchImageView
+                                            <com.bufferchime.agriculturefact.helper.TouchImageView
                                                 android:id="@+id/imgQuestion"
                                                 android:layout_width="@dimen/img_width"
                                                 android:layout_height="@dimen/img_height"
@@ -442,7 +442,7 @@
                                                 android:textColor="@color/colorPrimaryDark" />
 
 
-                                            <com.bufferchime.agriculturefact.game.quiz.helper.CircularProgressIndicator2
+                                            <com.bufferchime.agriculturefact.helper.CircularProgressIndicator2
                                                 android:id="@+id/progress_A"
                                                 android:layout_width="@dimen/circle_progress"
                                                 android:layout_height="@dimen/circle_progress"
@@ -499,7 +499,7 @@
                                                 android:text="@string/answer"
                                                 android:textColor="@color/colorPrimaryDark" />
 
-                                            <com.bufferchime.agriculturefact.game.quiz.helper.CircularProgressIndicator2
+                                            <com.bufferchime.agriculturefact.helper.CircularProgressIndicator2
                                                 android:id="@+id/progress_B"
                                                 android:layout_width="@dimen/circle_progress"
                                                 android:layout_height="@dimen/circle_progress"
@@ -557,7 +557,7 @@
                                                 android:text="@string/answer"
                                                 android:textColor="@color/colorPrimaryDark" />
 
-                                            <com.bufferchime.agriculturefact.game.quiz.helper.CircularProgressIndicator2
+                                            <com.bufferchime.agriculturefact.helper.CircularProgressIndicator2
                                                 android:id="@+id/progress_C"
                                                 android:layout_width="@dimen/circle_progress"
                                                 android:layout_height="@dimen/circle_progress"
@@ -616,7 +616,7 @@
                                                 android:text="@string/answer"
                                                 android:textColor="@color/colorPrimaryDark" />
 
-                                            <com.bufferchime.agriculturefact.game.quiz.helper.CircularProgressIndicator2
+                                            <com.bufferchime.agriculturefact.helper.CircularProgressIndicator2
                                                 android:id="@+id/progress_D"
                                                 android:layout_width="@dimen/circle_progress"
                                                 android:layout_height="@dimen/circle_progress"

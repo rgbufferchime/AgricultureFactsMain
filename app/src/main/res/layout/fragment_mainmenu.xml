@@ -30,55 +30,55 @@
         <RelativeLayout
             android:id="@+id/mainlogo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/mid_screen">
+            android:layout_height="600dp"
+           >
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
                 android:padding="5dp"
                 android:src="@drawable/squarelogo" />
 
 
+            <LinearLayout
+                android:id="@+id/mid_screen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="109dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/instruction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/new_btn_bg"
+                    android:text="@string/instruction"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/new_btn_bg"
+                    android:text="@string/start"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
         </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/mid_screen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="140dp"
-            android:gravity="bottom"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <Button
-                android:id="@+id/instruction"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/new_btn_bg"
-                android:text="@string/instruction"
-                android:textAllCaps="false"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/start"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/new_btn_bg"
-                android:text="@string/start"
-                android:textAllCaps="false"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-        </LinearLayout>
 
 
 

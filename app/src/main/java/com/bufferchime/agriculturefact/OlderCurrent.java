@@ -15,6 +15,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bufferchime.agriculturefact.activity.MainActivity;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -96,11 +98,11 @@ public class OlderCurrent extends AppCompatActivity implements BottomNavigationV
                 if (itemId == R.id.navigation_home) {
                     OlderCurrent.this.startActivity(new Intent(OlderCurrent.this, Home.class));
                 } else if (itemId == R.id.navigation_affairs) {
-                    OlderCurrent.this.startActivity(new Intent(OlderCurrent.this, Currentaffairs.class));
+                    OlderCurrent.this.startActivity(new Intent(OlderCurrent.this, OlderCurrent.class));
                 } else if (itemId == R.id.navigation_notes) {
                     OlderCurrent.this.startActivity(new Intent(OlderCurrent.this, Notes.class));
                 } else if (itemId == R.id.navigation_tests) {
-                    OlderCurrent.this.startActivity(new Intent(OlderCurrent.this, Quiz.class));
+                    OlderCurrent.this.startActivity(new Intent(OlderCurrent.this, MainActivity.class));
                 } else if (itemId == R.id.navigation_contact) {
                     OlderCurrent.this.startActivity(new Intent(OlderCurrent.this, Contact.class));
                 }

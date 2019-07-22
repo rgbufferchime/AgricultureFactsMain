@@ -116,7 +116,7 @@
                     android:gravity="center">
 
 
-                    <com.bufferchime.agriculturefact.game.quiz.helper.CircularProgressIndicator
+                    <com.bufferchime.agriculturefact.helper.CircularProgressIndicator
                         android:id="@+id/progressBarTwo"
                         android:layout_width="@dimen/progress_h_w"
                         android:layout_height="@dimen/progress_h_w"
@@ -232,7 +232,7 @@
                                             </RelativeLayout>
                                         </ScrollView>
 
-                                        <com.bufferchime.agriculturefact.game.quiz.helper.TouchImageView
+                                        <com.bufferchime.agriculturefact.helper.TouchImageView
                                             android:id="@+id/imgQuestion"
                                             android:layout_width="@dimen/img_width"
                                             android:layout_height="@dimen/img_height"

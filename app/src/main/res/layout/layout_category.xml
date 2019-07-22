@@ -42,7 +42,7 @@
 
 
 
-            <com.bufferchime.agriculturefact.game.quiz.helper.CircleImageView
+            <com.bufferchime.agriculturefact.helper.CircleImageView
                 android:id="@+id/imgcategory"
                 android:layout_width="40dp"
                 android:layout_height="40dp"

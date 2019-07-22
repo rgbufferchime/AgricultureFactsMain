@@ -18,15 +18,16 @@
     <TextView
         android:id="@+id/textView"
         android:layout_below="@+id/imageView2"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="5dp"
         android:textAlignment="center"
         android:fontFamily="@font/canaro_extra_bold"
         android:layout_width="match_parent"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textAllCaps="true"
         android:textStyle="bold"
         android:layout_height="wrap_content"
-        android:text="Agriculture Facts" />
+        android:text="Latest Current Affairs" />
     <include
         android:id="@+id/navigation"
         layout="@layout/element_bottom_navigation"
@@ -35,82 +36,12 @@
         android:layout_alignParentBottom="true"
         />
 
-
-    <Button
-        android:id="@+id/btncurrent"
-        android:layout_width="200dp"
+    <ListView
+        android:id="@+id/listview"
         android:layout_below="@+id/textView"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="50dp"
-        android:layout_weight="1"
-        android:background="@drawable/new_btn_bg"
-        android:text="Current Affairs"
-        android:textAllCaps="false"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/light_black"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/notes"
-        android:layout_width="200dp"
-        android:layout_below="@+id/btncurrent"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:background="@drawable/new_btn_bg"
-        android:text="Notes"
-        android:textAllCaps="false"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/light_black"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btn_tests"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/notes"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:background="@drawable/new_btn_bg"
-        android:text="Tests"
-        android:textAllCaps="false"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/light_black"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/start"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_tests"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:background="@drawable/new_btn_bg"
-        android:text="Contact"
-        android:textAllCaps="false"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/light_black"
-        android:textStyle="bold" />
-
-
-
-
-
-
-
-
+        android:layout_above="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>

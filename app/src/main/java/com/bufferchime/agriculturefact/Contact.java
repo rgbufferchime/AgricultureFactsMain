@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.bufferchime.agriculturefact.activity.MainActivity;
+
 public class Contact extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener  {
 
     protected BottomNavigationView navigationView;
@@ -43,11 +45,11 @@ public class Contact extends AppCompatActivity implements BottomNavigationView.O
                 if (itemId == R.id.navigation_home) {
                     Contact.this.startActivity(new Intent(Contact.this, Home.class));
                 } else if (itemId == R.id.navigation_affairs) {
-                    Contact.this.startActivity(new Intent(Contact.this, Currentaffairs.class));
+                    Contact.this.startActivity(new Intent(Contact.this, OlderPosts.class));
                 } else if (itemId == R.id.navigation_notes) {
                     Contact.this.startActivity(new Intent(Contact.this, Notes.class));
                 } else if (itemId == R.id.navigation_tests) {
-                    Contact.this.startActivity(new Intent(Contact.this, Quiz.class));
+                    Contact.this.startActivity(new Intent(Contact.this, MainActivity.class));
                 } else if (itemId == R.id.navigation_contact) {
                     Contact.this.startActivity(new Intent(Contact.this, Contact.class));
                 }

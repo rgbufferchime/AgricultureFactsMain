@@ -37,7 +37,7 @@ public class OlderPosts extends AppCompatActivity implements BottomNavigationVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notes);
+        setContentView(R.layout.activity_older_current);
 
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);

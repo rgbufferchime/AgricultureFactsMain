@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.bufferchime.agriculturefact.Notespack.CategoryNotes;
 import com.bufferchime.agriculturefact.Notespack.note;
 import com.bufferchime.agriculturefact.Notespack.noteadaptor;
+import com.bufferchime.agriculturefact.activity.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -103,11 +104,11 @@ public class Notes extends AppCompatActivity implements BottomNavigationView.OnN
                 if (itemId == R.id.navigation_home) {
                     Notes.this.startActivity(new Intent(Notes.this, Home.class));
                 } else if (itemId == R.id.navigation_affairs) {
-                    Notes.this.startActivity(new Intent(Notes.this, Currentaffairs.class));
+                    Notes.this.startActivity(new Intent(Notes.this, OlderPosts.class));
                 } else if (itemId == R.id.navigation_notes) {
                     Notes.this.startActivity(new Intent(Notes.this, Notes.class));
                 } else if (itemId == R.id.navigation_tests) {
-                    Notes.this.startActivity(new Intent(Notes.this, Quiz.class));
+                    Notes.this.startActivity(new Intent(Notes.this, MainActivity.class));
                 } else if (itemId == R.id.navigation_contact) {
                     Notes.this.startActivity(new Intent(Notes.this, Contact.class));
                 }

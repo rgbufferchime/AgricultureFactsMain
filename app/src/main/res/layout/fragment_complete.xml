@@ -217,7 +217,7 @@
                     </LinearLayout>
 
 
-                    <com.bufferchime.agriculturefact.game.quiz.helper.CircularProgressIndicator2
+                    <com.bufferchime.agriculturefact.helper.CircularProgressIndicator2
                         android:id="@+id/result_progress"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/result_circle"
