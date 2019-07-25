@@ -14,7 +14,20 @@ import wail.splacher.com.splasher.utils.Const;
 public class Launch extends SplasherActivity {
 
 
-
+    public String[] getRequiredPermissions() {
+        String[] permissions = null;
+        try {
+            permissions = getPackageManager().getPackageInfo(getPackageName(),
+                    PackageManager.GET_PERMISSIONS).requestedPermissions;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (permissions == null) {
+            return new String[0];
+        } else {
+            return permissions.clone();
+        }
+    }
 
     @Override
     public void initSplasher(SplasherConfig config) {
@@ -32,7 +45,7 @@ public class Launch extends SplasherActivity {
                 .setTitleAnimation(Techniques.Bounce)
                 .setTitleSize(24)
                 //---------------
-                .setSubtitle("All your facts at fingertips")
+                .setSubtitle("All facts at fingertips")
                 .setSubtitleColor(Color.parseColor("#ffffff"))
                 .setSubtitleAnimation(Techniques.FadeIn)
                 .setSubtitleSize(16);
@@ -44,7 +57,7 @@ public class Launch extends SplasherActivity {
     @Override
     public void onSplasherFinished() {
         Toast.makeText(this, "Lets Begin", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, Home.class));
+        startActivity(new Intent(this, Welcome.class));
 
     }
 

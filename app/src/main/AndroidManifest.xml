@@ -47,6 +47,10 @@
         <activity android:name=".Currentaffairs" />
         <activity android:name=".Home" />
         <activity android:name=".activity.MainActivity" />
+        <activity android:name=".SplashPermissionsActivity" />
+        <activity android:name=".Welcome" />
+        <activity android:name=".phverify2" />
+        <activity android:name=".phverify1" />
         <activity android:name=".Launch">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

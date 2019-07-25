@@ -58,20 +58,12 @@
                 android:id="@+id/imgBookmark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/setting"
+                android:layout_alignParentEnd="true"
                 android:padding="5dp"
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/ic_unmark"/>
 
-            <ImageView
-                android:id="@+id/setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/ic_settings" />
+
         </RelativeLayout>
 
         <RelativeLayout

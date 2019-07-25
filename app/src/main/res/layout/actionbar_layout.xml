@@ -37,15 +37,7 @@
         android:visibility="invisible"
         app:srcCompat="@drawable/ic_unmark" />
 
-    <ImageView
-        android:id="@+id/setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="10dp"
-        android:padding="10dp"
-        app:srcCompat="@drawable/ic_settings"/>
+
 
     <ImageView
         android:id="@+id/report"

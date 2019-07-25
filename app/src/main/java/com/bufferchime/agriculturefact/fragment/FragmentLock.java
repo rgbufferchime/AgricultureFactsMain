@@ -70,7 +70,6 @@ public class FragmentLock extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         tvLevel = (TextView) view.findViewById(R.id.tvLevel);
         back = (ImageView) view.findViewById(R.id.back);
-        setting = (ImageView) view.findViewById(R.id.setting);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         emptyMsg = (TextView) view.findViewById(R.id.empty_msg);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -112,21 +111,6 @@ public class FragmentLock extends Fragment {
                     }
 
                 }
-            }
-        });
-
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (SettingsPreferences.getSoundEnableDisable(getActivity())) {
-                    StaticUtils.backSoundonclick(getActivity());
-                }
-                if (SettingsPreferences.getVibration(getActivity())) {
-                    StaticUtils.vibrate(getActivity(), StaticUtils.VIBRATION_DURATION);
-                }
-                Intent playQuiz = new Intent(getActivity(), SettingActivity.class);
-                startActivity(playQuiz);
-                getActivity().overridePendingTransition(R.anim.open_next, R.anim.close_next);
             }
         });
 

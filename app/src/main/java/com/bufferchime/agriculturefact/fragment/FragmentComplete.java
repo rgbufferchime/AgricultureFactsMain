@@ -170,20 +170,7 @@ public class FragmentComplete extends Fragment implements View.OnClickListener {
             }
         });
 
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (SettingsPreferences.getSoundEnableDisable(getActivity())) {
-                    StaticUtils.backSoundonclick(getActivity());
-                }
-                if (SettingsPreferences.getVibration(getActivity())) {
-                    StaticUtils.vibrate(getActivity(), StaticUtils.VIBRATION_DURATION);
-                }
-                Intent playQuiz = new Intent(getActivity(), SettingActivity.class);
-                startActivity(playQuiz);
-                getActivity().overridePendingTransition(R.anim.open_next, R.anim.close_next);
-            }
-        });
+
         if (isLevelCompleted) {
             // levelNo--;
             if (Constant.TotalLevel == StaticUtils.RequestlevelNo) {

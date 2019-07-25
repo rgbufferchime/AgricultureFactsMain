@@ -315,12 +315,7 @@ public class FragmentPlay extends Fragment implements OnClickListener {
                 BackButtonMethod();
             }
         });
-        setting.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SettingButtonMethod();
-            }
-        });
+
 
     }
 
@@ -758,9 +753,9 @@ public class FragmentPlay extends Fragment implements OnClickListener {
         correctQuestion++;
         txtTrueQuestion.setText(String.valueOf(correctQuestion));
         rightProgress.setProgress(correctQuestion);
-        totalScore = totalScore + 5;
-        count_question_completed = count_question_completed + 5;
-        score = score + 5;
+        totalScore = totalScore + 4;
+        count_question_completed = count_question_completed + 4;
+        score = score + 4;
         txtScore.setText(String.valueOf(score));
         rightAns = SettingsPreferences.getRightAns(mContext);
         rightAns++;
@@ -774,9 +769,9 @@ public class FragmentPlay extends Fragment implements OnClickListener {
         playWrongSound();
         saveScore();
         inCorrectQuestion++;
-        totalScore = totalScore - 2;
-        count_question_completed = count_question_completed - 2;
-        score = score - 2;
+        totalScore = totalScore - 1;
+        count_question_completed = count_question_completed - 1;
+        score = score - 1;
         txtFalseQuestion.setText(String.valueOf(inCorrectQuestion));
         wrongProgress.setProgress(inCorrectQuestion);
         txtScore.setText(String.valueOf(score));

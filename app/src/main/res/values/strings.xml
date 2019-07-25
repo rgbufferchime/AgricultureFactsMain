@@ -90,8 +90,8 @@
     <!--instruction  messages-->
     <string name="how_to_play">How To Play Quiz</string>
     <string name="has_option">Quiz game has 4 options</string>
-    <string name="msg_right">For each right answer 5 points will be given.</string>
-    <string name="msg_wrong">minus 2 points for each question</string>
+    <string name="msg_right">For each right answer 4 points will be given.</string>
+    <string name="msg_wrong">minus 1 points for each question</string>
     <string name="msg_lifeline">Use of Lifeline  : You can use only once per level</string>
     <string name="msg_fifty_fifty">50 – 50 : for remove two option out of Four(deduct 4 coins ).</string>
     <string name="msg_skip">Skip question: you can pass question without minus points(deduct 2 coins).</string>
@@ -104,13 +104,28 @@
     <string name="font_size">Font Size</string>
 
     <!--Ad Mob Id-->
-    <string name="adAppId">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="adAppId">ca-app-pub-9815610985241268~5481202839</string>
     <string name="admob_Rewarded_Video_Ads">ca-app-pub-3940256099942544/5224354917</string>
-    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial_id">ca-app-pub-9815610985241268/8751248138</string>
+    <string name="admob_banner_id">ca-app-pub-9815610985241268/1986529232</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 
 
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
 
+    <string name="slide_1_title">Agriculture Facts!</string>
+    <string name="slide_1_desc">Say hello to facts by just one click!</string>
+
+    <string name="slide_2_title">Notes</string>
+    <string name="slide_2_desc">Read detailed notes on the go!</string>
+
+    <string name="slide_3_title">Important News</string>
+    <string name="slide_3_desc">All latest news at your fingertips!</string>
+
+    <string name="slide_4_title">Quiz</string>
+    <string name="slide_4_desc">Test your knowledge and improve!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> agriculture facts -> clear data</string>
 </resources>

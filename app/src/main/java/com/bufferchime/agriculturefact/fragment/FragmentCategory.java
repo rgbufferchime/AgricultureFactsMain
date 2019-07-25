@@ -72,7 +72,6 @@ public class FragmentCategory extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         back = (ImageView) view.findViewById(R.id.back);
-        setting = (ImageView) view.findViewById(R.id.setting);
         tvTitle = (TextView) view.findViewById(R.id.tvLevel);
 
         tvTitle.setText(getString(R.string.select_category));
@@ -95,20 +94,7 @@ public class FragmentCategory extends Fragment {
                 }
             }
         });
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (SettingsPreferences.getSoundEnableDisable(getActivity())) {
-                    StaticUtils.backSoundonclick(getActivity());
-                }
-                if (SettingsPreferences.getVibration(getActivity())) {
-                    StaticUtils.vibrate(getActivity(), StaticUtils.VIBRATION_DURATION);
-                }
-                Intent playQuiz = new Intent(getActivity(), SettingActivity.class);
-                startActivity(playQuiz);
-                getActivity().overridePendingTransition(R.anim.open_next, R.anim.close_next);
-            }
-        });
+
 
         return view;
     }

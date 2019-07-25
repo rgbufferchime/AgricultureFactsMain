@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.bufferchime.agriculturefact.Notespack.CategoryNotes;
 import com.bufferchime.agriculturefact.Notespack.note;
 import com.bufferchime.agriculturefact.Notespack.noteadaptor;
+import com.bufferchime.agriculturefact.activity.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -107,7 +108,7 @@ public class OlderPosts extends AppCompatActivity implements BottomNavigationVie
                 } else if (itemId == R.id.navigation_notes) {
                     OlderPosts.this.startActivity(new Intent(OlderPosts.this, Notes.class));
                 } else if (itemId == R.id.navigation_tests) {
-                    OlderPosts.this.startActivity(new Intent(OlderPosts.this, Quiz.class));
+                    OlderPosts.this.startActivity(new Intent(OlderPosts.this, MainActivity.class));
                 } else if (itemId == R.id.navigation_contact) {
                     OlderPosts.this.startActivity(new Intent(OlderPosts.this, Contact.class));
                 }

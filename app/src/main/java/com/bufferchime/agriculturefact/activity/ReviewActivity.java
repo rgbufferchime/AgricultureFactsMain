@@ -89,17 +89,15 @@ public class ReviewActivity extends AppCompatActivity {
         prev = (ImageView) findViewById(R.id.prev);
         next = (ImageView) findViewById(R.id.next);
         back = (ImageView) findViewById(R.id.back);
-        setting = (ImageView) findViewById(R.id.setting);
         report = (ImageView) findViewById(R.id.report);
         bookmark = (ImageView) findViewById(R.id.bookmark);
         btnSolution = (Button) findViewById(R.id.btnSolution);
 
         cardView = (CardView) findViewById(R.id.cardView1);
 
-        setting.setVisibility(View.GONE);
+
         bookmark.setVisibility(View.VISIBLE);
         report.setVisibility(View.VISIBLE);
-        setting.setVisibility(View.INVISIBLE);
         tvLevel.setText(getString(R.string.review_answer));
         reviews = FragmentPlay.reviews;
         Utils.displayInterstitial();

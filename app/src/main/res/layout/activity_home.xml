@@ -9,25 +9,19 @@
     android:orientation="vertical"
     tools:context="com.bufferchime.agriculturefact.Home">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@mipmap/ic_launcher" />
     <TextView
         android:id="@+id/textView"
-        android:layout_below="@+id/imageView2"
-        android:layout_marginTop="-4dp"
+        android:layout_below="@+id/top"
+        android:layout_marginTop="4dp"
         android:layout_marginBottom="5dp"
         android:textAlignment="center"
         android:fontFamily="@font/canaro_extra_bold"
         android:layout_width="match_parent"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textAllCaps="true"
         android:textStyle="bold"
         android:layout_height="wrap_content"
-        android:text="Latest Current Affairs" />
+        android:text="Current Affairs" />
     <include
         android:id="@+id/navigation"
         layout="@layout/element_bottom_navigation"
@@ -42,6 +36,16 @@
         android:layout_above="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/element_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        />
 
 
 </RelativeLayout>

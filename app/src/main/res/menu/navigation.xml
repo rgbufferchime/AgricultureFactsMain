@@ -2,34 +2,34 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/icnhome"
+        android:title="FEED" />
 
     <item
         android:id="@+id/navigation_affairs"
-        android:icon="@drawable/currentaffair"
-        android:title="AFFAIRS" />
-
-
-    <item
-        android:id="@+id/navigation_notes"
-        android:icon="@drawable/notes"
-        android:title="NOTES" />
-
-    <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/home"
-        android:title="HOME" />
+        android:icon="@drawable/icnnews"
+        android:title="NEWS" />
 
     <item
         android:id="@+id/navigation_tests"
-        android:icon="@drawable/tests"
-        android:title="TESTS" />
+        android:icon="@drawable/icntest"
+        android:title="QUIZ" />
+    <item
+        android:id="@+id/navigation_notes"
+        android:icon="@drawable/icnnotes"
+        android:title="NOTES" />
+
+
+
+
 
 
 
     <item
         android:id="@+id/navigation_contact"
-        android:icon="@drawable/contact"
-        android:title="CONTACT" />
+        android:icon="@drawable/icnabt"
+        android:title="ABOUT" />
 
 </menu>

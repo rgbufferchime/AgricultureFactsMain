@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "255073560360",
-    "firebase_url": "https://agriculturefacts-24c95.firebaseio.com",
-    "project_id": "agriculturefacts-24c95",
-    "storage_bucket": "agriculturefacts-24c95.appspot.com"
+    "project_number": "594686868709",
+    "firebase_url": "https://agriculturefactsapp.firebaseio.com",
+    "project_id": "agriculturefactsapp",
+    "storage_bucket": "agriculturefactsapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:255073560360:android:0f629fd4542bbd99",
+        "mobilesdk_app_id": "1:594686868709:android:0f629fd4542bbd99",
         "android_client_info": {
           "package_name": "com.bufferchime.agriculturefact"
         }
       },
       "oauth_client": [
         {
-          "client_id": "255073560360-pi2vii885uclpb9uqmncvg5i3i69usov.apps.googleusercontent.com",
+          "client_id": "594686868709-tp6rib0d0br59e05gkq5dkl3ede3pc8i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bufferchime.agriculturefact",
+            "certificate_hash": "488a92d8ee63b54a133e6e44f378bdd9b38f58f6"
+          }
+        },
+        {
+          "client_id": "594686868709-olfpvd5megd8sql0pq369f098q7b57no.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCqW_VHRr5JcAMtbos5Oj9knNAfMte6RuQ"
+          "current_key": "AIzaSyDq_7QYrPXcMNiCxNJuV4uNV62C2TPPXHM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "255073560360-pi2vii885uclpb9uqmncvg5i3i69usov.apps.googleusercontent.com",
+              "client_id": "594686868709-olfpvd5megd8sql0pq369f098q7b57no.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
