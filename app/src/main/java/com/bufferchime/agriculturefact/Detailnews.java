@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,17 +19,19 @@ public class Detailnews extends AppCompatActivity {
 
 
     //  protected BottomNavigationView navigationView;
-    TextView heading;
+    TextView tv;
     private static final String DEBUG_TAG = "HttpExample";
     ArrayList<NewsClass> ingots = new ArrayList<NewsClass>();
     ListView listview;
-    int key= Currentaffairs.getSelection();
+    int key= Home.getSelection();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailnews);
-
+        View v = findViewById(R.id.top);
+        TextView tv = (TextView) v.findViewById(R.id.textView4);
+        tv.setText("Current Affairs");
 
 
 
@@ -42,7 +45,7 @@ public class Detailnews extends AppCompatActivity {
             public void onResult(JSONObject object) {
                 processJson(object);
             }
-        }).execute("https://spreadsheets.google.com/tq?key=166VKvn5_xt-KePTnlphC-0DZWbfyCgvzQh4lAFDGuq0");
+        }).execute("https://spreadsheets.google.com/tq?key=1rfO1AyLZBMv5SJAIJ_j_9nrOC63Al42btlMqdpsHib8");
     }
 
 
@@ -73,16 +76,17 @@ public class Detailnews extends AppCompatActivity {
 
             int position = columns.getJSONObject(0).getInt("v");
             String name = columns.getJSONObject(1).getString("v");
-            String today = columns.getJSONObject(2).getString("v");
-            String difference = columns.getJSONObject(3).getString("v");
-
-            NewsClass ingot1 = new NewsClass(position, name, today,difference);
+            String today = columns.getJSONObject(3).getString("v");
+            String difference = columns.getJSONObject(4).getString("v");
+            String date = columns.getJSONObject(2).getString("v");
+            NewsClass ingot1 = new NewsClass(position, name, today,difference,date);
             ingots.add(ingot1);
 
 
 
             final NewsAdaptor2 adapter = new NewsAdaptor2(Detailnews.this, R.layout.list_news_row, ingots);
             listview.setAdapter(adapter);
+            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
         } catch (JSONException e) {
             e.printStackTrace();

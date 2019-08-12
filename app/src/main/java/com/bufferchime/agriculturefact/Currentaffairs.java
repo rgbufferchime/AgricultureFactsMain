@@ -150,15 +150,17 @@ public class Currentaffairs extends AppCompatActivity implements BottomNavigatio
 
                 int position = columns.getJSONObject(0).getInt("v");
                 String name = columns.getJSONObject(1).getString("v");
-                String today = columns.getJSONObject(2).getString("v");
-                String difference = columns.getJSONObject(3).getString("v");
+                String today = columns.getJSONObject(3).getString("v");
+                String difference = columns.getJSONObject(4).getString("v");
+                String date = columns.getJSONObject(2).getString("v");
 
-                NewsClass ingot1 = new NewsClass(position, name, today,difference);
+
+                NewsClass ingot1 = new NewsClass(position, name, today,difference,date);
                 ingots.add(ingot1);
 
             }
 
-            final NewsAdaptor adapter = new NewsAdaptor(Currentaffairs.this, R.layout.list_news_row, ingots);
+            final NewsAdaptor adapter = new NewsAdaptor(Currentaffairs.this, R.layout.new_list_news_row, ingots);
             listview.setAdapter(adapter);
 
         } catch (JSONException e) {

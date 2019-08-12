@@ -13,46 +13,33 @@
         android:id="@+id/top"
         layout="@layout/element_topbar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="55dp"
         android:layout_alignParentTop="true"
         />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_below="@+id/top"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        android:fontFamily="@font/canaro_extra_bold"
-        android:layout_width="match_parent"
-        android:textSize="16dp"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:text="Study Zone" />
+
     <include
         android:id="@+id/navigation"
         layout="@layout/element_bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         />
 
-    <TextView
-        android:id="@+id/textViewabout"
-        android:layout_below="@+id/textView"
-        android:paddingHorizontal="9dp"
-        android:layout_marginTop="0dp"
-        android:fontFamily="@font/canaro_extra_bold"
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
         android:layout_width="match_parent"
-        android:background="@color/gray1"
-        android:textSize="15dp"
-        android:layout_height="wrap_content"
-        android:text="Download and view notes on the GO!!"
-        android:textAlignment="center"/>
+        android:layout_height="match_parent"
+        android:gravity="center" >
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/listview"
-        android:layout_below="@+id/textViewabout"
+        android:layout_below="@+id/top"
         android:layout_above="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

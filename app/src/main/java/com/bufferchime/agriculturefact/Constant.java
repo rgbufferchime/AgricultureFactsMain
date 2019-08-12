@@ -4,9 +4,9 @@ public class Constant {
 
     //////////////////////// POST API & PARAMETER  //////////////////////////
 
-    public static String QUIZ_URL = "http://quizdemo.wrteam.in/api-v2.php"; // admin page url
+    public static String QUIZ_URL = "http://agrifacts.moviesdownload.website/api-v2.php"; // admin page url
 
-    public static String DEVICE_REGISTRATION_API = "http://quizdemo.wrteam.in/RegisterDevice.php";
+    public static String DEVICE_REGISTRATION_API = "http://agrifacts.moviesdownload.website/RegisterDevice.php";
 
     /////// PARAMETERS  ///////
     public static String accessKey = "access_key";

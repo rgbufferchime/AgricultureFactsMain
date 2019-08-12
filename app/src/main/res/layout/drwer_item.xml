@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    >
+ 
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/icon_contact"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerInParent="true"
+         />
+ 
+    <com.bufferchime.agriculturefact.font.RobotoItalicTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="15sp"
+        android:gravity="center_vertical"
+        android:textColor="#000"
+        android:text="Line 1"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/icon"
+        android:layout_toEndOf="@+id/icon" />
+ 
+    <com.bufferchime.agriculturefact.font.RobotoRegularTextView
+        android:id="@+id/subTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Line 2"
+        android:layout_toRightOf="@+id/icon"
+        android:layout_below="@+id/title"
+        />
+ 
+</RelativeLayout>

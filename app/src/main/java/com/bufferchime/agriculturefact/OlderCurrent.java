@@ -15,7 +15,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bufferchime.agriculturefact.activity.MainActivity;
+
+import com.bufferchime.agriculturefact.materialdesgin.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +34,7 @@ public class OlderCurrent extends AppCompatActivity implements BottomNavigationV
     ListView listview;
     String key=OlderPosts.getSelection();
     public static int selection;
-    public static String categorylink[];
+    public static String categorylink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,9 @@ public class OlderCurrent extends AppCompatActivity implements BottomNavigationV
 
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
-
+        View v = findViewById(R.id.top);
+        TextView tv = (TextView) v.findViewById(R.id.textView4);
+        tv.setText("Current Affairs");
 
 
 
@@ -68,7 +71,8 @@ public class OlderCurrent extends AppCompatActivity implements BottomNavigationV
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
                 //    if(position==0){
                 selection=position;
-                Intent appInfo = new Intent(OlderCurrent.this, Detailnews.class);
+                categorylink=("https://spreadsheets.google.com/tq?key="+key);
+                Intent appInfo = new Intent(OlderCurrent.this, Detailnews2.class);
 
                 startActivity(appInfo);
             }
@@ -123,18 +127,7 @@ public class OlderCurrent extends AppCompatActivity implements BottomNavigationV
     @Override
     public void onBackPressed() {
 
-        if (doubleBackToExitPressedOnce) {
-            finishAffinity();
-            super.onBackPressed();
-
-            System.exit(0);
-
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit",
-                Toast.LENGTH_SHORT).show();
-
+        OlderCurrent.this.startActivity(new Intent(OlderCurrent.this, OlderPosts.class));
     }
 //NavigationViewEnd
 
@@ -151,16 +144,18 @@ public class OlderCurrent extends AppCompatActivity implements BottomNavigationV
 
                 int position = columns.getJSONObject(0).getInt("v");
                 String name = columns.getJSONObject(1).getString("v");
-                String today = columns.getJSONObject(2).getString("v");
-                String difference = columns.getJSONObject(3).getString("v");
+                String today = columns.getJSONObject(3).getString("v");
+                String difference = columns.getJSONObject(4).getString("v");
+                String date = columns.getJSONObject(2).getString("v");
 
-                NewsClass ingot1 = new NewsClass(position, name, today,difference);
+                NewsClass ingot1 = new NewsClass(position, name, today,difference,date);
                 ingots.add(ingot1);
 
             }
 
             final NewsAdaptor adapter = new NewsAdaptor(OlderCurrent.this, R.layout.list_news_row, ingots);
             listview.setAdapter(adapter);
+            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -169,6 +164,10 @@ public class OlderCurrent extends AppCompatActivity implements BottomNavigationV
 
     public static int getSelection(){
         return selection;
+    }
+
+    public static String getlink(){
+        return categorylink;
     }
 
 

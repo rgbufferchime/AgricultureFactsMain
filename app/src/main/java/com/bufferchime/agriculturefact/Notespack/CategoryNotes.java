@@ -20,6 +20,7 @@ import com.bufferchime.agriculturefact.Contact;
 import com.bufferchime.agriculturefact.Currentaffairs;
 import com.bufferchime.agriculturefact.DownloadWebpageTask;
 import com.bufferchime.agriculturefact.Home;
+import com.bufferchime.agriculturefact.NewPdfView;
 import com.bufferchime.agriculturefact.Notes;
 import com.bufferchime.agriculturefact.Pdfview;
 import com.bufferchime.agriculturefact.Quiz;
@@ -40,7 +41,7 @@ public class CategoryNotes extends AppCompatActivity implements BottomNavigation
     ListView listview;
     String key=Notes.getSelection();
     TextView heading;
-    public static String selection;
+    public static String selection="0";
     public static String categorylink[];
 
     @Override
@@ -51,7 +52,6 @@ public class CategoryNotes extends AppCompatActivity implements BottomNavigation
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
         heading=(TextView)findViewById(R.id.textView);
-        heading.setText("");
 
 
         //sheetparts
@@ -73,8 +73,9 @@ public class CategoryNotes extends AppCompatActivity implements BottomNavigation
                     @Override
                     public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
                         //    if(position==0){
-                        selection=categorylink[position];
+                        //selection=categorylink[position];
                         Intent appInfo = new Intent(CategoryNotes.this, Pdfview.class);
+                        appInfo.putExtra("selection", categorylink[position]);
 
                         startActivity(appInfo);
                     }
@@ -153,7 +154,7 @@ public class CategoryNotes extends AppCompatActivity implements BottomNavigation
         try {
             JSONArray rows = object.getJSONArray("rows");
 
-            categorylink = new String[25];
+            categorylink = new String[105];
             int arrayval=0;
             for (int r = 0; r < rows.length(); r++) {
                 JSONObject row = rows.getJSONObject(r);
@@ -173,6 +174,7 @@ public class CategoryNotes extends AppCompatActivity implements BottomNavigation
 
             final noteadaptor adapter = new noteadaptor(CategoryNotes.this, R.layout.list_item_row, notes);
             listview.setAdapter(adapter);
+            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
         } catch (JSONException e) {
             e.printStackTrace();

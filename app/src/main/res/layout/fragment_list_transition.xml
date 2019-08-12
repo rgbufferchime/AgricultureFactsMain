@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/bar_color"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical" >
+
+      <!--   <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            >
+
+            <Button
+                android:id="@+id/title_bar_left_menu"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/titlebar_back_selector" />
+
+            <TextView
+                android:id="@+id/titleBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:fontFamily="sans-serif-light"
+                android:padding="7dp"
+                android:singleLine="false"
+                android:text="SubQuiz"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_large" />
+        </FrameLayout> -->
+        
+
+         <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#388E3C" />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="@dimen/list_horizontal_margin"
+            android:layout_marginRight="@dimen/list_horizontal_margin" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,9 +1,11 @@
 package com.bufferchime.agriculturefact;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,13 +40,15 @@ public class NewsAdaptor2 extends ArrayAdapter<NewsClass> {
             TextView price = (TextView) v.findViewById(R.id.tv_price);
             TextView city = (TextView) v.findViewById(R.id.tv_cityname);
             ImageView ud =(ImageView)  v.findViewById(R.id.imageView3);
+            //WebView ww=(WebView)v.findViewById(R.id.web);
 
 
             //  pos.setText(String.valueOf(o.getPosition()));
             price.setText(String.valueOf(o.getName()));
-            city.setText(String.valueOf(o.getTime()));
+            city.setText(Html.fromHtml(String.valueOf(o.getTime())));
             Picasso.with(context).load(String.valueOf(o.getDate())).into(ud);
 
+           // ww.loadData(String.valueOf(o.getTime()), "text/html; charset=utf-8", "UTF-8");
 
 
 

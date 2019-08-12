@@ -12,43 +12,28 @@
     >
 
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <include
+        android:id="@+id/top"
+        layout="@layout/element_topbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_below="@+id/imageView2"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        android:fontFamily="@font/canaro_extra_bold"
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
         android:layout_width="match_parent"
-        android:textSize="25dp"
-        android:layout_height="wrap_content"
-        android:text="Current Affair" />
+        android:layout_height="match_parent"
+        android:gravity="center" >
 
-    <TextView
-        android:id="@+id/textViewabout"
-        android:layout_below="@+id/textView"
-        android:paddingHorizontal="9dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/canaro_extra_bold"
-        android:layout_width="match_parent"
-        android:textSize="15dp"
-        android:layout_height="wrap_content"
-        android:text="Check Out the latest Current Affair" />
-
-
-
-
-
-
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+    </RelativeLayout>
     <ListView
         android:id="@+id/listview"
-        android:layout_below="@+id/textViewabout"
-        android:layout_above="@+id/navigation"
+        android:layout_below="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

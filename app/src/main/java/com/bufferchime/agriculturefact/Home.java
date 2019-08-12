@@ -12,9 +12,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bufferchime.agriculturefact.activity.MainActivity;
+
+import com.bufferchime.agriculturefact.materialdesgin.MainActivity;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +30,7 @@ public class Home extends AppCompatActivity implements BottomNavigationView.OnNa
     protected BottomNavigationView navigationView;
     Boolean doubleBackToExitPressedOnce = false;
 
+
     private static final String DEBUG_TAG = "HttpExample";
     ArrayList<NewsClass> ingots = new ArrayList<NewsClass>();
     ListView listview;
@@ -37,10 +41,18 @@ public class Home extends AppCompatActivity implements BottomNavigationView.OnNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // initialize the AdMob app
+
+        // initialize the AdMob app
+
+
+
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
 
-
+        View v = findViewById(R.id.top);
+        TextView tv = (TextView) v.findViewById(R.id.textView4);
+        tv.setText("FEED");
         listview = (ListView) findViewById(R.id.listview);
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -50,14 +62,14 @@ public class Home extends AppCompatActivity implements BottomNavigationView.OnNa
             public void onResult(JSONObject object) {
                 processJson(object);
             }
-        }).execute("https://spreadsheets.google.com/tq?key=166VKvn5_xt-KePTnlphC-0DZWbfyCgvzQh4lAFDGuq0");
+        }).execute("https://spreadsheets.google.com/tq?key=1rfO1AyLZBMv5SJAIJ_j_9nrOC63Al42btlMqdpsHib8");
 
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
                 //    if(position==0){
-                selection=position;
+                selection=listview.getAdapter().getCount()-position-1;
                 Intent appInfo = new Intent(Home.this, Detailnews.class);
 
                 startActivity(appInfo);
@@ -145,22 +157,23 @@ public class Home extends AppCompatActivity implements BottomNavigationView.OnNa
             JSONArray rows = object.getJSONArray("rows");
 
 
-            for (int r = 0; r < rows.length(); r++) {
+            for (int r = (rows.length()-1); r >= 0; r--) {
                 JSONObject row = rows.getJSONObject(r);
                 JSONArray columns = row.getJSONArray("c");
 
                 int position = columns.getJSONObject(0).getInt("v");
                 String name = columns.getJSONObject(1).getString("v");
-                String today = columns.getJSONObject(2).getString("v");
-                String difference = columns.getJSONObject(3).getString("v");
-
-                NewsClass ingot1 = new NewsClass(position, name, today,difference);
+                String today = columns.getJSONObject(3).getString("v");
+                String difference = columns.getJSONObject(4).getString("v");
+                String date = columns.getJSONObject(2).getString("v");
+                NewsClass ingot1 = new NewsClass(position, name, today,difference,date);
                 ingots.add(ingot1);
 
             }
 
-            final NewsAdaptor adapter = new NewsAdaptor(Home.this, R.layout.list_news_row, ingots);
+            final NewsAdaptor adapter = new NewsAdaptor(Home.this, R.layout.new_list_news_row, ingots);
             listview.setAdapter(adapter);
+            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
         } catch (JSONException e) {
             e.printStackTrace();

@@ -9,40 +9,77 @@
     android:orientation="vertical"
     tools:context="com.bufferchime.agriculturefact.Contact">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_below="@+id/imageView2"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        android:fontFamily="@font/canaro_extra_bold"
-        android:layout_width="match_parent"
-        android:textSize="25dp"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:text="Contact us" />
     <include
         android:id="@+id/navigation"
         layout="@layout/element_bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/profile_list"
+        android:layout_width="match_parent"
+        android:layout_height="272dp"
+        android:layout_below="@+id/top"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="2dp"
+        android:orientation="vertical"
+        android:scrollbars="none" />
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="178dp"
-        app:srcCompat="@drawable/fb" />
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="460dp"
+        app:srcCompat="@drawable/fb"
+        android:onClick="fb"/>
+
+    <ImageView
+    android:id="@+id/imageView10"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="45dp"
+    android:layout_marginTop="340dp"
+    android:onClick="feedback"
+    app:srcCompat="@drawable/icfeed" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="340dp"
+        android:onClick="rateus"
+        app:srcCompat="@drawable/icrate" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="226dp"
+        android:layout_marginTop="340dp"
+        android:onClick="share"
+        app:srcCompat="@drawable/icshare" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="340dp"
+        android:onClick="privacy"
+        app:srcCompat="@drawable/icprivacy" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -50,33 +87,87 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="264dp"
-        app:srcCompat="@drawable/insta" />
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="460dp"
+        app:srcCompat="@drawable/insta"
+        android:onClick="insta"/>
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/element_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="131dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/imageView"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="187dp"
-        android:fontFamily="@font/canaro_extra_bold"
-        android:text="Like our facebook page"
-        android:textSize="25dp" />
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="-37dp"
+        android:paddingHorizontal="10dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="FOLLOW US ON:" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="558dp"
+        android:layout_marginEnd="-172dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:paddingHorizontal="10dp"
+        android:text="GET YOUR APPS DEVELOPED BY:" />
 
     <TextView
         android:id="@+id/textView3"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="-39dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:paddingHorizontal="10dp"
+        android:text="REACH US :" />
+
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="272dp"
-        android:fontFamily="@font/canaro_extra_bold"
-        android:text="Follow us on instagram"
-        android:textSize="25dp" />
+        android:layout_marginStart="226dp"
+        android:layout_marginTop="463dp"
+        android:layout_marginEnd="138dp"
+        android:onClick="twitter"
+        app:srcCompat="@drawable/twit" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="460dp"
+        android:layout_marginStart="310dp"
+        app:srcCompat="@drawable/youtu"
+        android:onClick="ytube"/>
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="135dp"
+        android:layout_height="67dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="250dp"
+
+        android:layout_marginTop="529dp"
+        app:srcCompat="@drawable/bufferchime"
+        android:onClick="bufferchime"/>
 </RelativeLayout>

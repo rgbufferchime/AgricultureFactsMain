@@ -10,6 +10,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        lintOptions {
+
+            checkReleaseBuilds false
+
+        }
     }
     buildTypes {
         release {
@@ -51,7 +57,6 @@ dependencies {
     //pdfview
     implementation 'es.voghdev.pdfviewpager:library:1.0.3'
 
-    implementation 'com.google.android.gms:play-services-ads:17.1.2'
     // Add the itextpdf dependency:
     implementation 'com.itextpdf:itextpdf:5.5.13'
 
@@ -63,8 +68,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
     //implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
 
-    implementation 'com.google.android.gms:play-services-games:16.0.0'
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
 
 
     implementation 'com.android.support:customtabs:27.1.1'
@@ -75,11 +79,24 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-auth:16.1.0'
     implementation 'com.google.firebase:firebase-messaging:17.5.0'
+    implementation 'com.google.firebase:firebase-database:16.0.6'
+    implementation 'com.google.firebase:firebase-storage:10.0.1'
+    implementation 'com.firebaseui:firebase-ui-database:0.4.0'
 
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.daimajia.slider:library:1.1.5@aar'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.9.7'
 
+    implementation('com.github.bumptech.glide:glide:4.7.1') {
+        exclude group: "com.android.support"
+    }
+
+
+    implementation files('libs/aspose-cells-8.3.1.jar')
+    implementation files('libs/bcprov-jdk15-146.jar')
+    implementation files('libs/renderscript-v8.jar')
+    implementation 'com.parse.bolts:bolts-android:1.+'
+    implementation files('libs/Parse-1.10.0.jar')
 
 }
 apply plugin: 'com.google.gms.google-services'

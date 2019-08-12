@@ -6,14 +6,9 @@
     android:layout_height="match_parent"
     android:background="#e8eaea"
     tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="81dp">
+    >
 
 
-
-        <RelativeLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tv_cityname"
@@ -21,6 +16,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageView3"
                 android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
                 android:text="TextView"
                 android:textAlignment="textStart"
                 android:paddingHorizontal="15dp"
@@ -31,6 +27,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_marginTop="20dp"
                 android:scaleType="centerCrop"
                 android:layout_below="@+id/tv_price"
                 app:srcCompat="@drawable/squarelogo" />
@@ -39,7 +36,7 @@
                 android:id="@+id/tv_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="5dp"
                 android:paddingHorizontal="15dp"
 
                 android:layout_centerHorizontal="true"
@@ -50,7 +47,15 @@
                 android:textSize="18dp"
                 />
 
+            <WebView
+                android:id="@+id/web"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_cityname"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                />
+
 
         </RelativeLayout>
 
-</RelativeLayout>

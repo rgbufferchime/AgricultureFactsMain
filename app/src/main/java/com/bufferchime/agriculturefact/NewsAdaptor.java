@@ -29,7 +29,7 @@ public class NewsAdaptor extends ArrayAdapter<NewsClass> {
         View v = convertView;
         if (v == null) {
             LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = vi.inflate(R.layout.list_news_row, null);
+            v = vi.inflate(R.layout.new_list_news_row, null);
         }
         NewsClass o = ingots.get(position);
         if (o != null) {
@@ -41,8 +41,8 @@ public class NewsAdaptor extends ArrayAdapter<NewsClass> {
 
 
             // pos.setText(String.valueOf(o.getPosition()));
-            price.setText(String.valueOf(o.getName()));
-           city.setText(" ");
+            price.setText(String.valueOf(o.getDate2()));
+            city.setText(String.valueOf(o.getName()));
             Picasso.with(context).load(String.valueOf(o.getDate())).into(ud);
 
 

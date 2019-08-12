@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.bufferchime.agriculturefact.Notespack.CategoryNotes;
+
 import es.voghdev.pdfviewpager.library.RemotePDFViewPager;
 import es.voghdev.pdfviewpager.library.adapter.PDFPagerAdapter;
 import es.voghdev.pdfviewpager.library.remote.DownloadFile;
@@ -19,8 +21,9 @@ public class Pdfview extends AppCompatActivity implements DownloadFile.Listener 
     LinearLayout root;
     RemotePDFViewPager remotePDFViewPager;
     PDFPagerAdapter adapter;
+   // public static String select= CategoryNotes.getSelection();
 
-
+       String address;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +32,11 @@ public class Pdfview extends AppCompatActivity implements DownloadFile.Listener 
         setContentView(R.layout.activity_pdfview);
 
         root = (LinearLayout) findViewById(R.id.remote_pdf_root);
-
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null)
+        {
+             address=extras.getString("selection");
+        }
 
         final Context ctx = this;
         final DownloadFile.Listener listener = this;
@@ -52,7 +59,7 @@ public class Pdfview extends AppCompatActivity implements DownloadFile.Listener 
 
     protected String getUrlFromEditText() {
 
-        return "https://drive.google.com/uc?id=191RwUjk92LDp8ATQay1qT8OwUzXp1TAM&export=download";
+        return ("https://drive.google.com/uc?id="+address+"&export=download");
     }
 
     public static void open(Context context) {
@@ -71,6 +78,7 @@ public class Pdfview extends AppCompatActivity implements DownloadFile.Listener 
     public void onSuccess(String url, String destinationPath) {
         adapter = new PDFPagerAdapter(this, FileUtil.extractFileNameFromURL(url));
         remotePDFViewPager.setAdapter(adapter);
+        findViewById(R.id.loadingPanel).setVisibility(View.GONE);
         updateLayout();
 
     }

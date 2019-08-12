@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.bufferchime.agriculturefact"
     android:installLocation="auto">
 
@@ -29,15 +30,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".NewPdfView"></activity>
+        <activity android:name=".Privacy" />
+        <activity android:name=".EditProfile" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/adAppId" />
+            android:value="ca-app-pub-3940256099942544~3347511713" />
 
-
-        <activity android:name=".OlderCurrent"></activity>
+        <activity android:name=".OlderCurrent" />
         <activity android:name=".Detailnews" />
+        <activity android:name=".Detailnews2" />
         <activity android:name=".Pdfview" />
         <activity android:name=".Contact" />
         <activity android:name=".Quiz" />
@@ -46,7 +49,7 @@
         <activity android:name=".Notespack.CategoryNotes" />
         <activity android:name=".Currentaffairs" />
         <activity android:name=".Home" />
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".materialdesgin.MainActivity" />
         <activity android:name=".SplashPermissionsActivity" />
         <activity android:name=".Welcome" />
         <activity android:name=".phverify2" />
@@ -58,22 +61,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-
-
-
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-        <activity
-            android:name=".activity.SettingActivity"
-            android:label=""
-            android:theme="@style/Theme.AppCompat.Light.Dialog" />
-        <activity
-            android:name=".activity.InstructionActivity"
-            android:screenOrientation="portrait" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -92,22 +82,43 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".activity.ReviewActivity" />
-        <activity android:name=".activity.AboutUs" />
+        <activity
+            android:name=".materialdesgin.ResultsActivitys"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="ResultsActivitys" />
+        <activity
+            android:name=".materialdesgin.SingleQuestionDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="single" />
 
-        <!-- Firebase Notifications -->
+        <service android:name="com.parse.PushService" />
 
-        <service android:name=".service.MyFirebaseMessagingService">
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
-        </service>
+        </receiver>
+        <receiver
+            android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-        <!-- ./Firebase Notifications -->
-        <activity android:name=".activity.BookmarkList" />
-        <activity android:name=".activity.PrivacyPolicy" />
-        <activity android:name=".activity.BookmarkPlay"></activity>
-
+                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+                <category android:name="com.mobiquiz.materialdesgin" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

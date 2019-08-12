@@ -3,8 +3,11 @@ package com.bufferchime.agriculturefact.helper;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
 import android.support.v7.app.AppCompatDelegate;
 import android.telephony.PhoneStateListener;
@@ -15,10 +18,92 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.bufferchime.agriculturefact.OlderPosts;
 import com.bufferchime.agriculturefact.R;
+import com.bufferchime.agriculturefact.phverify1;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.jakewharton.picasso.OkHttp3Downloader;
+import com.squareup.picasso.Picasso;
 
 
 public class AppController extends Application {
+
+
+
+
+
+	//private static final String TAG = Global.class.getSimpleName();
+
+	public FirebaseAuth firebaseAuth;
+	private static final String CANARO_EXTRA_BOLD_PATH = "fonts/canaro_extra_bold.otf";
+	public static Typeface canaroExtraBold;
+
+	public boolean validUser;
+
+
+
+	public FirebaseAuth.AuthStateListener mAuthListener;
+
+	public FirebaseAuth getFirebaseAuth() {
+		return firebaseAuth = FirebaseAuth.getInstance();
+	}
+
+	public String getFirebaseUserAuthenticateId() {
+		String userId = null;
+		if (firebaseAuth.getCurrentUser() != null) {
+			userId = firebaseAuth.getCurrentUser().getUid();
+		}
+		return userId;
+	}
+
+	public void checkUserLogin(final Context context) {
+		if (firebaseAuth.getCurrentUser() != null) {
+			Intent profileIntent = new Intent(context, OlderPosts.class);
+			context.startActivity(profileIntent);
+		}
+	}
+
+	public void isUserCurrentlyLogin(final Context context) {
+		mAuthListener = new FirebaseAuth.AuthStateListener() {
+			@Override
+			public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+				FirebaseUser user = firebaseAuth.getCurrentUser();
+				boolean validUser = false;
+				if (null != user) {
+					try {
+						user.reload();
+						if (null != user) {
+							validUser = true;
+						}
+					} catch (Exception e) {
+						//} catch (FirebaseAuthInvalidUserException e) {
+						validUser = false;
+					}
+
+
+					if (validUser==true) {
+						Intent profileIntent = new Intent(context, OlderPosts.class);
+						context.startActivity(profileIntent);
+					}
+				} else {
+					Intent loginIntent = new Intent(context, phverify1.class);
+					context.startActivity(loginIntent);
+				}
+			}
+		};
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 	public static final String TAG = AppController.class
 			.getSimpleName();

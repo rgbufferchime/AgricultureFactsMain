@@ -12,12 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bufferchime.agriculturefact.Notespack.CategoryNotes;
 import com.bufferchime.agriculturefact.Notespack.note;
 import com.bufferchime.agriculturefact.Notespack.noteadaptor;
-import com.bufferchime.agriculturefact.activity.MainActivity;
+import com.bufferchime.agriculturefact.materialdesgin.MainActivity;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,9 +42,13 @@ public class Notes extends AppCompatActivity implements BottomNavigationView.OnN
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
 
+
+
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
-
+        View v = findViewById(R.id.top);
+        TextView tv = (TextView) v.findViewById(R.id.textView4);
+        tv.setText("NOTES");
 
         //sheetparts
         listview = (ListView) findViewById(R.id.listview);
@@ -54,7 +60,7 @@ public class Notes extends AppCompatActivity implements BottomNavigationView.OnN
             public void onResult(JSONObject object) {
                 processJson(object);
             }
-        }).execute("https://spreadsheets.google.com/tq?key=1BKa7C6kDs9I9x8gAwjt5u2KJf0p84dwCgx4_WG70924");
+        }).execute("https://spreadsheets.google.com/tq?key=1mNECv0B1UPKwS7BLyJELnRFt635l36KB0kUBPyHpj2s");
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -76,7 +82,6 @@ public class Notes extends AppCompatActivity implements BottomNavigationView.OnN
 
 
 
-        Toast.makeText(this, "Double Click to Select Category", Toast.LENGTH_SHORT).show();
 
 
 
@@ -169,7 +174,7 @@ public class Notes extends AppCompatActivity implements BottomNavigationView.OnN
 
             final noteadaptor adapter = new noteadaptor(Notes.this, R.layout.list_item_row, notes);
             listview.setAdapter(adapter);
-
+            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
         } catch (JSONException e) {
             e.printStackTrace();
         }

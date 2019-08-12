@@ -12,12 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bufferchime.agriculturefact.Notespack.CategoryNotes;
 import com.bufferchime.agriculturefact.Notespack.note;
 import com.bufferchime.agriculturefact.Notespack.noteadaptor;
-import com.bufferchime.agriculturefact.activity.MainActivity;
+import com.bufferchime.agriculturefact.materialdesgin.MainActivity;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,7 +45,9 @@ public class OlderPosts extends AppCompatActivity implements BottomNavigationVie
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
 
-
+        View v = findViewById(R.id.top);
+        TextView tv = (TextView) v.findViewById(R.id.textView4);
+        tv.setText("NEWS");
         //sheetparts
         listview = (ListView) findViewById(R.id.listview);
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -54,7 +58,7 @@ public class OlderPosts extends AppCompatActivity implements BottomNavigationVie
             public void onResult(JSONObject object) {
                 processJson(object);
             }
-        }).execute("https://spreadsheets.google.com/tq?key=15za5Lsi1tIsV9VEgDcctBANhnY8WIzorpBenx-CAEnU");
+        }).execute("https://spreadsheets.google.com/tq?key=13fXZmhqlQmeibNdrdbpCJK1_BzIBuBVee5dcGpMxDHQ");
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -76,7 +80,6 @@ public class OlderPosts extends AppCompatActivity implements BottomNavigationVie
 
 
 
-        Toast.makeText(this, "Double Click to Select", Toast.LENGTH_SHORT).show();
 
 
 
@@ -104,7 +107,7 @@ public class OlderPosts extends AppCompatActivity implements BottomNavigationVie
                 if (itemId == R.id.navigation_home) {
                     OlderPosts.this.startActivity(new Intent(OlderPosts.this, Home.class));
                 } else if (itemId == R.id.navigation_affairs) {
-                    OlderPosts.this.startActivity(new Intent(OlderPosts.this, Currentaffairs.class));
+                    OlderPosts.this.startActivity(new Intent(OlderPosts.this, OlderPosts.class));
                 } else if (itemId == R.id.navigation_notes) {
                     OlderPosts.this.startActivity(new Intent(OlderPosts.this, Notes.class));
                 } else if (itemId == R.id.navigation_tests) {
@@ -169,7 +172,7 @@ public class OlderPosts extends AppCompatActivity implements BottomNavigationVie
 
             final noteadaptor adapter = new noteadaptor(OlderPosts.this, R.layout.list_item_row, notes);
             listview.setAdapter(adapter);
-
+            findViewById(R.id.loadingPanel).setVisibility(View.GONE);
         } catch (JSONException e) {
             e.printStackTrace();
         }

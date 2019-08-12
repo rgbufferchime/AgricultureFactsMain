@@ -25,7 +25,7 @@
         <RelativeLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/baseshade5"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="5dp">
 
